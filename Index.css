@@ -387,10 +387,24 @@ align-items: flex-end;
 /* Integrations section styles */
 .integrations-section{
     color: var(--text-light);
-    background-color: var(--primary-accent);
+    /* background-color: var(--primary-accent); */
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
+    padding: calc(var(--spacing-xl)*3);
+    z-index: 1;
+}
+.integrations-section::before{
+    content: "";
+    width: 100%;
+    height: 1100px;
+    background-color:var(--primary-accent);
+    position: absolute;
+    z-index: -1;
+    transform: skewY(-10deg);
+    top: -32px;
+    left: 0;
 }
 .integrations-section .primary-button{
     background-color: var(--blue-1);
@@ -426,6 +440,7 @@ align-items: flex-end;
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: calc(var(--spacing-xl)*3);
 
 }
 .why-swipe-section .card-container{
